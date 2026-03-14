@@ -69,7 +69,7 @@ namespace Code.Common.Extensions
 
     public static Transform AddLocalY(this Transform transform, float y)
     {
-      transform.localPosition = transform.localPosition.AddX(y);
+      transform.localPosition = transform.localPosition.AddY(y);
       return transform;
     }
   }
