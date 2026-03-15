@@ -13,12 +13,16 @@ public static class GameComponentsLookup {
     public const int DamageTakenAnimator = 2;
     public const int EntityLink = 3;
     public const int Id = 4;
-    public const int SpriteRenderer = 5;
+    public const int Renderer = 5;
     public const int StatusVisuals = 6;
-    public const int Transform = 7;
-    public const int WorldPosition = 8;
+    public const int TeamId = 7;
+    public const int Transform = 8;
+    public const int WorldPosition = 9;
+    public const int Direction = 10;
+    public const int Moving = 11;
+    public const int Speed = 12;
 
-    public const int TotalComponents = 9;
+    public const int TotalComponents = 13;
 
     public static readonly string[] componentNames = {
         "Active",
@@ -26,10 +30,14 @@ public static class GameComponentsLookup {
         "DamageTakenAnimator",
         "EntityLink",
         "Id",
-        "SpriteRenderer",
+        "Renderer",
         "StatusVisuals",
+        "TeamId",
         "Transform",
-        "WorldPosition"
+        "WorldPosition",
+        "Direction",
+        "Moving",
+        "Speed"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -38,9 +46,13 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.DamageTakenAnimator),
         typeof(Code.Gameplay.Common.EntityLink),
         typeof(Code.Gameplay.Common.Id),
-        typeof(Code.Gameplay.Common.SpriteRendererComponent),
+        typeof(Code.Gameplay.Common.RendererComponent),
         typeof(Code.Gameplay.Common.StatusVisualsComponent),
+        typeof(Code.Gameplay.Common.TeamId),
         typeof(Code.Gameplay.Common.TransformComponent),
-        typeof(Code.Gameplay.Common.WorldPosition)
+        typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.Movement.DirectionComponent),
+        typeof(Code.Gameplay.Features.Movement.Moving),
+        typeof(Code.Gameplay.Features.Movement.Speed)
     };
 }
