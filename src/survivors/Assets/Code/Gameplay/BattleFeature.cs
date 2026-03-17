@@ -1,14 +1,13 @@
-﻿using Code.Gameplay.Common.Time;
-using Code.Gameplay.Features.Movement;
-using Code.Gameplay.Input;
+﻿using Code.Gameplay.Features.Movement;
+using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay
 {
     public class BattleFeature : Feature
     {
-        public BattleFeature(GameContext gameContext, ITimeService timeService)
+        public BattleFeature(ISystemFactory systems)
         {
-            Add(new MovementFeature(gameContext, timeService));
+            Add(systems.Create<MovementFeature>());
         }
     }
 }

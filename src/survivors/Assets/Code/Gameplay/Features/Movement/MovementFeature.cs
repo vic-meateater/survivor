@@ -1,13 +1,14 @@
 ﻿using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Movement.Systems;
+using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Movement
 {
     public class MovementFeature : Feature
     {
-        public MovementFeature(GameContext gameCotext, ITimeService timeService)
+        public MovementFeature(ISystemFactory systems)
         {
-            Add(new DirectionalDeltaMoveSystem(gameCotext, timeService));
+            Add(systems.Create<DirectionalDeltaMoveSystem>());
         }
     }
 }
