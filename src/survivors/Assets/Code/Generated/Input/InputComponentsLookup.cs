@@ -20,6 +20,6 @@ public static class InputComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(Code.Gameplay.Input.AxisInput),
-        typeof(Code.Gameplay.Input.Input)
+        typeof(Code.Gameplay.Input.InputComponent)
     };
 }
