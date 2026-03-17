@@ -1,4 +1,6 @@
 ﻿using Code.Gameplay.Features.Movement;
+using Code.Gameplay.Hero;
+using Code.Gameplay.Input;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay
@@ -7,6 +9,9 @@ namespace Code.Gameplay
     {
         public BattleFeature(ISystemFactory systems)
         {
+            Add(systems.Create<InputFeature>());
+            Add(systems.Create<HeroFeature>());
+            
             Add(systems.Create<MovementFeature>());
         }
     }

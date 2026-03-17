@@ -8,10 +8,10 @@ namespace Code.Gameplay.Features.Movement.Systems
         private readonly IGroup<GameEntity> _movers;
         private readonly ITimeService _time;
 
-        public DirectionalDeltaMoveSystem(GameContext gameContext, ITimeService time)
+        public DirectionalDeltaMoveSystem(GameContext game, ITimeService time)
         {
             _time = time;
-            _movers = gameContext.GetGroup(GameMatcher
+            _movers = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.WorldPosition,
                     GameMatcher.Direction,

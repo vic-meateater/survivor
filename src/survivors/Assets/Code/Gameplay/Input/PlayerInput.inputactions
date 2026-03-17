@@ -3,7 +3,7 @@
     "name": "PlayerInput",
     "maps": [
         {
-            "name": "Gameplay",
+            "name": "Actions",
             "id": "d1b68fad-03d7-44e2-b900-f71bb32b4c6b",
             "actions": [
                 {
@@ -38,7 +38,7 @@
                 {
                     "name": "",
                     "id": "fd8ddfbd-a150-42ad-8708-34677b1a0f5a",
-                    "path": "<Pointer>/press",
+                    "path": "<Pointer>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

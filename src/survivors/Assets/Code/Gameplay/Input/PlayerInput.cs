@@ -89,7 +89,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     ""name"": ""PlayerInput"",
     ""maps"": [
         {
-            ""name"": ""Gameplay"",
+            ""name"": ""Actions"",
             ""id"": ""d1b68fad-03d7-44e2-b900-f71bb32b4c6b"",
             ""actions"": [
                 {
@@ -124,7 +124,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""fd8ddfbd-a150-42ad-8708-34677b1a0f5a"",
-                    ""path"": ""<Pointer>/press"",
+                    ""path"": ""<Pointer>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -214,16 +214,16 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // Gameplay
-        m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-        m_Gameplay_PointerPosition = m_Gameplay.FindAction("PointerPosition", throwIfNotFound: true);
-        m_Gameplay_PointerClick = m_Gameplay.FindAction("PointerClick", throwIfNotFound: true);
-        m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
+        // Actions
+        m_Actions = asset.FindActionMap("Actions", throwIfNotFound: true);
+        m_Actions_PointerPosition = m_Actions.FindAction("PointerPosition", throwIfNotFound: true);
+        m_Actions_PointerClick = m_Actions.FindAction("PointerClick", throwIfNotFound: true);
+        m_Actions_Move = m_Actions.FindAction("Move", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
     {
-        UnityEngine.Debug.Assert(!m_Gameplay.enabled, "This will cause a leak and performance issues, PlayerInput.Gameplay.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Actions.enabled, "This will cause a leak and performance issues, PlayerInput.Actions.Disable() has not been called.");
     }
 
     /// <summary>
@@ -296,39 +296,39 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Gameplay
-    private readonly InputActionMap m_Gameplay;
-    private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
-    private readonly InputAction m_Gameplay_PointerPosition;
-    private readonly InputAction m_Gameplay_PointerClick;
-    private readonly InputAction m_Gameplay_Move;
+    // Actions
+    private readonly InputActionMap m_Actions;
+    private List<IActionsActions> m_ActionsActionsCallbackInterfaces = new List<IActionsActions>();
+    private readonly InputAction m_Actions_PointerPosition;
+    private readonly InputAction m_Actions_PointerClick;
+    private readonly InputAction m_Actions_Move;
     /// <summary>
-    /// Provides access to input actions defined in input action map "Gameplay".
+    /// Provides access to input actions defined in input action map "Actions".
     /// </summary>
-    public struct GameplayActions
+    public struct ActionsActions
     {
         private @PlayerInput m_Wrapper;
 
         /// <summary>
         /// Construct a new instance of the input action map wrapper class.
         /// </summary>
-        public GameplayActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public ActionsActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Gameplay/PointerPosition".
+        /// Provides access to the underlying input action "Actions/PointerPosition".
         /// </summary>
-        public InputAction @PointerPosition => m_Wrapper.m_Gameplay_PointerPosition;
+        public InputAction @PointerPosition => m_Wrapper.m_Actions_PointerPosition;
         /// <summary>
-        /// Provides access to the underlying input action "Gameplay/PointerClick".
+        /// Provides access to the underlying input action "Actions/PointerClick".
         /// </summary>
-        public InputAction @PointerClick => m_Wrapper.m_Gameplay_PointerClick;
+        public InputAction @PointerClick => m_Wrapper.m_Actions_PointerClick;
         /// <summary>
-        /// Provides access to the underlying input action "Gameplay/Move".
+        /// Provides access to the underlying input action "Actions/Move".
         /// </summary>
-        public InputAction @Move => m_Wrapper.m_Gameplay_Move;
+        public InputAction @Move => m_Wrapper.m_Actions_Move;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
-        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
+        public InputActionMap Get() { return m_Wrapper.m_Actions; }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
         public void Enable() { Get().Enable(); }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -336,9 +336,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
         public bool enabled => Get().enabled;
         /// <summary>
-        /// Implicitly converts an <see ref="GameplayActions" /> to an <see ref="InputActionMap" /> instance.
+        /// Implicitly converts an <see ref="ActionsActions" /> to an <see ref="InputActionMap" /> instance.
         /// </summary>
-        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
+        public static implicit operator InputActionMap(ActionsActions set) { return set.Get(); }
         /// <summary>
         /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
         /// </summary>
@@ -346,11 +346,11 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
         /// </remarks>
-        /// <seealso cref="GameplayActions" />
-        public void AddCallbacks(IGameplayActions instance)
+        /// <seealso cref="ActionsActions" />
+        public void AddCallbacks(IActionsActions instance)
         {
-            if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_ActionsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ActionsActionsCallbackInterfaces.Add(instance);
             @PointerPosition.started += instance.OnPointerPosition;
             @PointerPosition.performed += instance.OnPointerPosition;
             @PointerPosition.canceled += instance.OnPointerPosition;
@@ -368,8 +368,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <remarks>
         /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
         /// </remarks>
-        /// <seealso cref="GameplayActions" />
-        private void UnregisterCallbacks(IGameplayActions instance)
+        /// <seealso cref="ActionsActions" />
+        private void UnregisterCallbacks(IActionsActions instance)
         {
             @PointerPosition.started -= instance.OnPointerPosition;
             @PointerPosition.performed -= instance.OnPointerPosition;
@@ -383,12 +383,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         }
 
         /// <summary>
-        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="GameplayActions.UnregisterCallbacks(IGameplayActions)" />.
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="ActionsActions.UnregisterCallbacks(IActionsActions)" />.
         /// </summary>
-        /// <seealso cref="GameplayActions.UnregisterCallbacks(IGameplayActions)" />
-        public void RemoveCallbacks(IGameplayActions instance)
+        /// <seealso cref="ActionsActions.UnregisterCallbacks(IActionsActions)" />
+        public void RemoveCallbacks(IActionsActions instance)
         {
-            if (m_Wrapper.m_GameplayActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_ActionsActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
@@ -398,27 +398,27 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
         /// </remarks>
-        /// <seealso cref="GameplayActions.AddCallbacks(IGameplayActions)" />
-        /// <seealso cref="GameplayActions.RemoveCallbacks(IGameplayActions)" />
-        /// <seealso cref="GameplayActions.UnregisterCallbacks(IGameplayActions)" />
-        public void SetCallbacks(IGameplayActions instance)
+        /// <seealso cref="ActionsActions.AddCallbacks(IActionsActions)" />
+        /// <seealso cref="ActionsActions.RemoveCallbacks(IActionsActions)" />
+        /// <seealso cref="ActionsActions.UnregisterCallbacks(IActionsActions)" />
+        public void SetCallbacks(IActionsActions instance)
         {
-            foreach (var item in m_Wrapper.m_GameplayActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_ActionsActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_GameplayActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_ActionsActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
     /// <summary>
-    /// Provides a new <see cref="GameplayActions" /> instance referencing this action map.
+    /// Provides a new <see cref="ActionsActions" /> instance referencing this action map.
     /// </summary>
-    public GameplayActions @Gameplay => new GameplayActions(this);
+    public ActionsActions @Actions => new ActionsActions(this);
     /// <summary>
-    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Gameplay" which allows adding and removing callbacks.
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Actions" which allows adding and removing callbacks.
     /// </summary>
-    /// <seealso cref="GameplayActions.AddCallbacks(IGameplayActions)" />
-    /// <seealso cref="GameplayActions.RemoveCallbacks(IGameplayActions)" />
-    public interface IGameplayActions
+    /// <seealso cref="ActionsActions.AddCallbacks(IActionsActions)" />
+    /// <seealso cref="ActionsActions.RemoveCallbacks(IActionsActions)" />
+    public interface IActionsActions
     {
         /// <summary>
         /// Method invoked when associated input action "PointerPosition" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.

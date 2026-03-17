@@ -1,4 +1,6 @@
 ﻿using Code.Common.Entity;
+using Code.Common.Extensions;
+using Code.Gameplay.Hero.Behaviours;
 using UnityEngine;
 
 namespace Code.Gameplay.Hero.Registrars
@@ -6,6 +8,7 @@ namespace Code.Gameplay.Hero.Registrars
     public class HeroRegistrar : MonoBehaviour
     {
         public float Speed = 2f;
+        public HeroAnimator HeroAnimator;
         
         private GameEntity _entity;
 
@@ -13,9 +16,13 @@ namespace Code.Gameplay.Hero.Registrars
         {
             _entity = CreateEntity
                 .Empty()
+                .AddTransform(transform)
                 .AddWorldPosition(transform.position)
                 .AddDirection(Vector3.zero)
-                .AddSpeed(Speed);
+                .AddSpeed(Speed)
+                .AddHeroAnimator(HeroAnimator)
+                .With(x=> x.isHero = true)
+                .With(x=> x.isTurnAlongDirection = true);
         }
     }
 }

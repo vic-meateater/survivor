@@ -10,16 +10,25 @@ public static class InputComponentsLookup {
 
     public const int AxisInput = 0;
     public const int Input = 1;
+    public const int PointerDown = 2;
+    public const int PointerUp = 3;
+    public const int PointerWorldPosition = 4;
 
-    public const int TotalComponents = 2;
+    public const int TotalComponents = 5;
 
     public static readonly string[] componentNames = {
         "AxisInput",
-        "Input"
+        "Input",
+        "PointerDown",
+        "PointerUp",
+        "PointerWorldPosition"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(Code.Gameplay.Input.AxisInput),
-        typeof(Code.Gameplay.Input.InputComponent)
+        typeof(Code.Gameplay.Input.InputComponent),
+        typeof(Code.Gameplay.Input.PointerDown),
+        typeof(Code.Gameplay.Input.PointerUp),
+        typeof(Code.Gameplay.Input.PointerWorldPosition)
     };
 }

@@ -21,8 +21,11 @@ public static class GameComponentsLookup {
     public const int Direction = 10;
     public const int Moving = 11;
     public const int Speed = 12;
+    public const int TurnAlongDirection = 13;
+    public const int Hero = 14;
+    public const int HeroAnimator = 15;
 
-    public const int TotalComponents = 13;
+    public const int TotalComponents = 16;
 
     public static readonly string[] componentNames = {
         "Active",
@@ -37,7 +40,10 @@ public static class GameComponentsLookup {
         "WorldPosition",
         "Direction",
         "Moving",
-        "Speed"
+        "Speed",
+        "TurnAlongDirection",
+        "Hero",
+        "HeroAnimator"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -53,6 +59,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Movement.DirectionComponent),
         typeof(Code.Gameplay.Features.Movement.Moving),
-        typeof(Code.Gameplay.Features.Movement.Speed)
+        typeof(Code.Gameplay.Features.Movement.Speed),
+        typeof(Code.Gameplay.Features.Movement.TurnAlongDirection),
+        typeof(Code.Gameplay.Hero.Hero),
+        typeof(Code.Gameplay.Hero.HeroAnimatorComponent)
     };
 }

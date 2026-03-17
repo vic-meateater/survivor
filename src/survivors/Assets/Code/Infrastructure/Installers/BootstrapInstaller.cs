@@ -3,6 +3,7 @@ using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
+using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.AssetManagement;
@@ -59,7 +60,7 @@ namespace Code.Infrastructure.Installers
 
         private void BindCameraProvider()
         {
-            Container.BindInterfacesAndSelfTo<CameraProvider>().AsSingle();
+            Container.BindInterfacesAndSelfTo<CameraProvider>().AsSingle().NonLazy();
         }
 
         private void BindProgressServices()
@@ -107,6 +108,7 @@ namespace Code.Infrastructure.Installers
 
         private void BindInputService()
         {
+            Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
         }
 
         private void BindUIServices()
