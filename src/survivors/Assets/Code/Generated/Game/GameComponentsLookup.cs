@@ -8,26 +8,36 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Active = 0;
-    public const int Damage = 1;
-    public const int DamageTakenAnimator = 2;
-    public const int EntityLink = 3;
-    public const int Id = 4;
-    public const int Renderer = 5;
-    public const int StatusVisuals = 6;
-    public const int TeamId = 7;
-    public const int Transform = 8;
-    public const int WorldPosition = 9;
-    public const int Direction = 10;
-    public const int Moving = 11;
-    public const int Speed = 12;
-    public const int TurnAlongDirection = 13;
-    public const int Hero = 14;
-    public const int HeroAnimator = 15;
+    public const int Destructed = 0;
+    public const int SelfDestructTimer = 1;
+    public const int View = 2;
+    public const int Active = 3;
+    public const int Damage = 4;
+    public const int DamageTakenAnimator = 5;
+    public const int EntityLink = 6;
+    public const int Id = 7;
+    public const int Renderer = 8;
+    public const int StatusVisuals = 9;
+    public const int TeamId = 10;
+    public const int Transform = 11;
+    public const int WorldPosition = 12;
+    public const int Enemy = 13;
+    public const int EnemyAnimator = 14;
+    public const int EnemyTypeId = 15;
+    public const int SpawnTimer = 16;
+    public const int Direction = 17;
+    public const int Moving = 18;
+    public const int Speed = 19;
+    public const int TurnAlongDirection = 20;
+    public const int Hero = 21;
+    public const int HeroAnimator = 22;
 
-    public const int TotalComponents = 16;
+    public const int TotalComponents = 23;
 
     public static readonly string[] componentNames = {
+        "Destructed",
+        "SelfDestructTimer",
+        "View",
         "Active",
         "Damage",
         "DamageTakenAnimator",
@@ -38,6 +48,10 @@ public static class GameComponentsLookup {
         "TeamId",
         "Transform",
         "WorldPosition",
+        "Enemy",
+        "EnemyAnimator",
+        "EnemyTypeId",
+        "SpawnTimer",
         "Direction",
         "Moving",
         "Speed",
@@ -47,6 +61,9 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.Common.Destructed),
+        typeof(Code.Common.SelfDestructTimer),
+        typeof(Code.Common.View),
         typeof(Code.Gameplay.Common.Active),
         typeof(Code.Gameplay.Common.Damage),
         typeof(Code.Gameplay.Common.DamageTakenAnimator),
@@ -57,6 +74,10 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.TeamId),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Enemies.Enemy),
+        typeof(Code.Gameplay.Enemies.EnemyAnimatorComponent),
+        typeof(Code.Gameplay.Enemies.EnemyTypeIdComponent),
+        typeof(Code.Gameplay.Enemies.SpawnTimer),
         typeof(Code.Gameplay.Features.Movement.DirectionComponent),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),

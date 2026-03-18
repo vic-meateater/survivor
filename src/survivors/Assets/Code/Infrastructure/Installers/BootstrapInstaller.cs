@@ -60,7 +60,7 @@ namespace Code.Infrastructure.Installers
 
         private void BindCameraProvider()
         {
-            Container.BindInterfacesAndSelfTo<CameraProvider>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<CameraProvider>().AsSingle();
         }
 
         private void BindProgressServices()
@@ -102,6 +102,7 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IRandomService>().To<UnityRandomService>().AsSingle();
             Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
             Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
+            Container.Bind<IPhysics3DService>().To<Physics3DService>().AsSingle();
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
         }

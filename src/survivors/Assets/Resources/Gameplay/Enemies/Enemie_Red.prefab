@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: cc3be8f3e97ff49468fd1d2b6e2ec221, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -236,10 +236,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6812344275522830642}
-  - component: {fileID: 3223230408550602606}
-  - component: {fileID: 1772959647520491704}
+  - component: {fileID: 523831146579541419}
+  - component: {fileID: 8926817677874582099}
+  - component: {fileID: 8593183598732194431}
+  - component: {fileID: 5164869103380736341}
+  - component: {fileID: 5910924061305464004}
+  - component: {fileID: 6194266453714732764}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Enemie_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,7 +265,7 @@ Transform:
   - {fileID: 543760355345934993}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3223230408550602606
+--- !u!114 &523831146579541419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -270,12 +274,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8913815682638500911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e36dc54b15fb4c4996251972dcf2ffe2, type: 3}
+  m_Script: {fileID: 11500000, guid: fb450343b3ef4f07b026e394317e0ee0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Hero.Registrars.HeroRegistrar
-  Speed: 2
-  HeroAnimator: {fileID: 1772959647520491704}
---- !u!114 &1772959647520491704
+  m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Enemies.Behaviours.EnemyAnimator
+--- !u!114 &8926817677874582099
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -284,6 +286,61 @@ MonoBehaviour:
   m_GameObject: {fileID: 8913815682638500911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2ee816ffb784b40a03cf41b91d73e55, type: 3}
+  m_Script: {fileID: 11500000, guid: 82c6e9e8cce74282afb363a4821d8437, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Hero.Behaviours.HeroAnimator
+  m_EditorClassIdentifier: Assembly-CSharp::Code.Infrastructure.View.EntityBehaviour
+--- !u!114 &8593183598732194431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913815682638500911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9920b16f4341febd3565cb96c54a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Enemies.Registrars.EnemyRegistrar
+  EntityView: {fileID: 8926817677874582099}
+  EnemyTypeId: 1
+  Speed: 1.5
+--- !u!114 &5164869103380736341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913815682638500911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f50c7bae4c848fea45f23839e288302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Common.Registrars.TransformRegistrar
+  EntityView: {fileID: 8926817677874582099}
+--- !u!114 &5910924061305464004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913815682638500911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be437e6c99ab432dac29789e461f474a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Enemies.Registrars.EnemyAnimatorRegistrar
+  EntityView: {fileID: 8926817677874582099}
+  EnemyAnimator: {fileID: 523831146579541419}
+--- !u!114 &6194266453714732764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913815682638500911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315dbe7ff59948bcb2719d83c3f2e921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Code.Infrastructure.View.SelfInitializedEntityView
+  EntityBehaviour: {fileID: 8926817677874582099}
