@@ -9,12 +9,12 @@ namespace Code.Infrastructure.Installers
   {
     public Camera MainCamera;
     public Transform StartPoint;
-    private ICameraProvider _cameraProvider;
+    private ICameraProvider3D _cameraProvider;
     private ILevelDataProvider _levelDataProvider;
 
     [Inject]
     private void Construct(
-      ICameraProvider cameraProvider, 
+      ICameraProvider3D cameraProvider, 
       ILevelDataProvider levelDataProvider
       )
     {

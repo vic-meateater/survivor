@@ -238,10 +238,8 @@ GameObject:
   - component: {fileID: 6812344275522830642}
   - component: {fileID: 523831146579541419}
   - component: {fileID: 8926817677874582099}
-  - component: {fileID: 8593183598732194431}
   - component: {fileID: 5164869103380736341}
   - component: {fileID: 5910924061305464004}
-  - component: {fileID: 6194266453714732764}
   m_Layer: 7
   m_Name: Enemie_Red
   m_TagString: Untagged
@@ -289,23 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c6e9e8cce74282afb363a4821d8437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Code.Infrastructure.View.EntityBehaviour
---- !u!114 &8593183598732194431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8913815682638500911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa9920b16f4341febd3565cb96c54a59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Enemies.Registrars.EnemyRegistrar
-  EntityView: {fileID: 8926817677874582099}
-  HP: 3
-  Damage: 1
-  EnemyTypeId: 1
-  Speed: 1.5
 --- !u!114 &5164869103380736341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,16 +314,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Enemies.Registrars.EnemyAnimatorRegistrar
   EntityView: {fileID: 8926817677874582099}
   EnemyAnimator: {fileID: 523831146579541419}
---- !u!114 &6194266453714732764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8913815682638500911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 315dbe7ff59948bcb2719d83c3f2e921, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Code.Infrastructure.View.SelfInitializedEntityView
-  EntityBehaviour: {fileID: 8926817677874582099}

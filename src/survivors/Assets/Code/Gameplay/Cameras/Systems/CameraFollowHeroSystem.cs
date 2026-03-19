@@ -9,12 +9,12 @@ namespace Code.Gameplay.Cameras.Systems
     public class CameraFollowHeroSystem : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _heroes;
-        private readonly ICameraProvider _cameraProvider;
+        private readonly ICameraProvider3D _cameraProvider;
         
         private Vector3 _offset;
         private bool _offsetInitialized;
 
-        public CameraFollowHeroSystem(GameContext game, ICameraProvider cameraProvider)
+        public CameraFollowHeroSystem(GameContext game, ICameraProvider3D cameraProvider)
         {
             _cameraProvider = cameraProvider;
             _heroes = game.GetGroup(GameMatcher

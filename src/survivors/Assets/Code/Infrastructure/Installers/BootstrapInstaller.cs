@@ -3,6 +3,8 @@ using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
+using Code.Gameplay.Enemies.Factory;
+using Code.Gameplay.Hero.Factory;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
 using Code.Gameplay.StaticData;
@@ -10,6 +12,7 @@ using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
 using Code.Infrastructure.Loading;
 using Code.Infrastructure.Systems;
+using Code.Infrastructure.View.Factory;
 using UnityEngine;
 using Zenject;
 
@@ -60,7 +63,7 @@ namespace Code.Infrastructure.Installers
 
         private void BindCameraProvider()
         {
-            Container.BindInterfacesAndSelfTo<CameraProvider>().AsSingle();
+            Container.BindInterfacesAndSelfTo<CameraProvider3D>().AsSingle();
         }
 
         private void BindProgressServices()
@@ -75,6 +78,9 @@ namespace Code.Infrastructure.Installers
 
         private void BindGameplayFactories()
         {
+            Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
+            Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
+            Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
         }
 
         private void BindEntityIndices()

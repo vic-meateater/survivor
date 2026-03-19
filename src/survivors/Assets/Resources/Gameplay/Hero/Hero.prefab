@@ -236,14 +236,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6812344275522830642}
-  - component: {fileID: 3223230408550602606}
   - component: {fileID: 1772959647520491704}
   - component: {fileID: 3139020695814712262}
   - component: {fileID: 6696615669776784123}
   - component: {fileID: 1851625424968695784}
-  - component: {fileID: 2692707766589925088}
   m_Layer: 6
-  m_Name: Player
+  m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,21 +263,6 @@ Transform:
   - {fileID: 543760355345934993}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3223230408550602606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8913815682638500911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e36dc54b15fb4c4996251972dcf2ffe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Hero.Registrars.HeroRegistrar
-  EntityView: {fileID: 3139020695814712262}
-  MaxHP: 100
-  Speed: 2
 --- !u!114 &1772959647520491704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,16 +314,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Hero.Registrars.HeroAnimatorRegistrar
   EntityView: {fileID: 3139020695814712262}
   HeroAnimator: {fileID: 1772959647520491704}
---- !u!114 &2692707766589925088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8913815682638500911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 315dbe7ff59948bcb2719d83c3f2e921, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Code.Infrastructure.View.SelfInitializedEntityView
-  EntityBehaviour: {fileID: 3139020695814712262}

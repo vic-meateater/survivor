@@ -29,7 +29,9 @@ namespace Code.Gameplay.Enemies.Registrars
                 .AddLayerMask(CollisionLayer.Hero.AsMask())
                 .With(x => x.isEnemy = true)
                 .With(x => x.isTurnAlongDirection = true)
-                .With(x => x.isMoving = true);
+                .With(x => x.isMoving = true)
+                .With(x=>x.isMovementAvailable = true)
+                ;
             
         }
 

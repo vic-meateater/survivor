@@ -8,6 +8,8 @@ namespace Code.Gameplay.Hero
     {
         public HeroFeature(ISystemFactory systems)
         {
+            Add(systems.Create<InitializeHeroSystem>());
+            
             Add(systems.Create<SetHeroDirectionByInputSystem>());
             Add(systems.Create<AnimateHeroMovementSystem>());
             Add(systems.Create<CameraFollowHeroSystem>());

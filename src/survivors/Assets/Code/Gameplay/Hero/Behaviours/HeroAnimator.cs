@@ -10,7 +10,11 @@ namespace Code.Gameplay.Hero.Behaviours
         public void PlayIdle() { }
         public void PlayDamageTaken()
         {
-            MyLog.Info("Hero took damage");
+        }
+
+        public void PlayDied()
+        {
+            MyLog.Info("Hero died");
         }
     }
 }

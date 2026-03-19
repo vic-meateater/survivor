@@ -11,41 +11,48 @@ public static class GameComponentsLookup {
     public const int Destructed = 0;
     public const int SelfDestructTimer = 1;
     public const int View = 2;
-    public const int Active = 3;
-    public const int Damage = 4;
-    public const int DamageTakenAnimator = 5;
-    public const int EntityLink = 6;
-    public const int Id = 7;
-    public const int Renderer = 8;
-    public const int StatusVisuals = 9;
-    public const int TeamId = 10;
-    public const int Transform = 11;
-    public const int WorldPosition = 12;
-    public const int Enemy = 13;
-    public const int EnemyAnimator = 14;
-    public const int EnemyTypeId = 15;
-    public const int SpawnTimer = 16;
-    public const int CurrentHP = 17;
-    public const int MaxHP = 18;
-    public const int Direction = 19;
-    public const int Moving = 20;
-    public const int Speed = 21;
-    public const int TurnAlongDirection = 22;
-    public const int CollectsTargetInterval = 23;
-    public const int CollectsTargetTimer = 24;
-    public const int LayerMask = 25;
-    public const int Radius = 26;
-    public const int ReadyToCollectTargets = 27;
-    public const int TargetBuffer = 28;
-    public const int Hero = 29;
-    public const int HeroAnimator = 30;
+    public const int ViewPath = 3;
+    public const int ViewPrefab = 4;
+    public const int Active = 5;
+    public const int Damage = 6;
+    public const int DamageTakenAnimator = 7;
+    public const int EntityLink = 8;
+    public const int Id = 9;
+    public const int Renderer = 10;
+    public const int StatusVisuals = 11;
+    public const int TeamId = 12;
+    public const int Transform = 13;
+    public const int WorldPosition = 14;
+    public const int Enemy = 15;
+    public const int EnemyAnimator = 16;
+    public const int EnemyTypeId = 17;
+    public const int SpawnTimer = 18;
+    public const int CurrentHP = 19;
+    public const int Dead = 20;
+    public const int MaxHP = 21;
+    public const int ProcessingDeath = 22;
+    public const int Direction = 23;
+    public const int MovementAvailable = 24;
+    public const int Moving = 25;
+    public const int Speed = 26;
+    public const int TurnAlongDirection = 27;
+    public const int CollectsTargetInterval = 28;
+    public const int CollectsTargetTimer = 29;
+    public const int LayerMask = 30;
+    public const int Radius = 31;
+    public const int ReadyToCollectTargets = 32;
+    public const int TargetBuffer = 33;
+    public const int Hero = 34;
+    public const int HeroAnimator = 35;
 
-    public const int TotalComponents = 31;
+    public const int TotalComponents = 36;
 
     public static readonly string[] componentNames = {
         "Destructed",
         "SelfDestructTimer",
         "View",
+        "ViewPath",
+        "ViewPrefab",
         "Active",
         "Damage",
         "DamageTakenAnimator",
@@ -61,8 +68,11 @@ public static class GameComponentsLookup {
         "EnemyTypeId",
         "SpawnTimer",
         "CurrentHP",
+        "Dead",
         "MaxHP",
+        "ProcessingDeath",
         "Direction",
+        "MovementAvailable",
         "Moving",
         "Speed",
         "TurnAlongDirection",
@@ -80,6 +90,8 @@ public static class GameComponentsLookup {
         typeof(Code.Common.Destructed),
         typeof(Code.Common.SelfDestructTimer),
         typeof(Code.Common.View),
+        typeof(Code.Common.ViewPath),
+        typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.Active),
         typeof(Code.Gameplay.Common.Damage),
         typeof(Code.Gameplay.Common.DamageTakenAnimator),
@@ -95,8 +107,11 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Enemies.EnemyTypeIdComponent),
         typeof(Code.Gameplay.Enemies.SpawnTimer),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHP),
+        typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHP),
+        typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
         typeof(Code.Gameplay.Features.Movement.DirectionComponent),
+        typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Movement.TurnAlongDirection),

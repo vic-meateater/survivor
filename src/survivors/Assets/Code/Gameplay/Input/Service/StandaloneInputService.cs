@@ -16,7 +16,7 @@ namespace Code.Gameplay.Input.Service
         private bool _pointerDownConsumed;
         private bool _pointerUpConsumed;
 
-        public StandaloneInputService(ICameraProvider camera)
+        public StandaloneInputService(ICameraProvider3D camera)
         {
             _playerInput = new();
             _playerInput.Enable();

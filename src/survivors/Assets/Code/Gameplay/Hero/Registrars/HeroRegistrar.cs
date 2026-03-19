@@ -19,6 +19,7 @@ namespace Code.Gameplay.Hero.Registrars
                 .AddSpeed(Speed)
                 .With(x => x.isHero = true)
                 .With(x => x.isTurnAlongDirection = true)
+                .With(x=>x.isMovementAvailable = true)
                 ;
         }
 

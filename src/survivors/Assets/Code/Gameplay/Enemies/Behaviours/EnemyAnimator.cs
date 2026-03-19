@@ -12,5 +12,10 @@ namespace Code.Gameplay.Enemies.Behaviours
         {
             MyLog.Info("Enemy took damage");
         }
+        
+        public void PlayDeathAnimation()
+        {
+            MyLog.Info("Enemy died");
+        }
     }
 }

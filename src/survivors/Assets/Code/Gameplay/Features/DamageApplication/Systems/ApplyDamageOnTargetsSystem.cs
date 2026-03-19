@@ -14,8 +14,9 @@ namespace Code.Gameplay.Features.DamageApplication.Systems
                 .AllOf(
                     GameMatcher.TargetBuffer,
                     GameMatcher.Damage
-                    ));
+                ));
         }
+
         public void Execute()
         {
             foreach (GameEntity damageDealer in _damageDealers)
@@ -25,7 +26,7 @@ namespace Code.Gameplay.Features.DamageApplication.Systems
                 if (target.hasCurrentHP)
                 {
                     target.ReplaceCurrentHP(target.CurrentHP - damageDealer.Damage);
-                    if(target.hasDamageTakenAnimator)
+                    if (target.hasDamageTakenAnimator)
                         target.DamageTakenAnimator.PlayDamageTaken();
                 }
             }
