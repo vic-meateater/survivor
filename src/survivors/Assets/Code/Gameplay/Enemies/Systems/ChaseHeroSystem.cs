@@ -1,4 +1,3 @@
-using Code.Common.Extensions;
 using Entitas;
 using UnityEngine;
 
@@ -14,7 +13,9 @@ namespace Code.Gameplay.Enemies.Systems
             _enemies = game.GetGroup(GameMatcher
                 .AllOf(
                 GameMatcher.Enemy, 
-                GameMatcher.WorldPosition));
+                GameMatcher.WorldPosition
+                ));
+            
              _heroes = game.GetGroup(GameMatcher.Hero);
         }
         public void Execute()

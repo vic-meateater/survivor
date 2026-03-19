@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9172790821674972490}
   - component: {fileID: 5020949966420890722}
   - component: {fileID: 8228784887580193640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 434011758748173777}
   - component: {fileID: 6118527687562108315}
   - component: {fileID: 2089554282315161935}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 6696615669776784123}
   - component: {fileID: 1851625424968695784}
   - component: {fileID: 2692707766589925088}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Hero.Registrars.HeroRegistrar
   EntityView: {fileID: 3139020695814712262}
+  MaxHP: 100
   Speed: 2
 --- !u!114 &1772959647520491704
 MonoBehaviour:

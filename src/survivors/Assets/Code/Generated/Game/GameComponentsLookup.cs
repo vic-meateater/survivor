@@ -25,14 +25,22 @@ public static class GameComponentsLookup {
     public const int EnemyAnimator = 14;
     public const int EnemyTypeId = 15;
     public const int SpawnTimer = 16;
-    public const int Direction = 17;
-    public const int Moving = 18;
-    public const int Speed = 19;
-    public const int TurnAlongDirection = 20;
-    public const int Hero = 21;
-    public const int HeroAnimator = 22;
+    public const int CurrentHP = 17;
+    public const int MaxHP = 18;
+    public const int Direction = 19;
+    public const int Moving = 20;
+    public const int Speed = 21;
+    public const int TurnAlongDirection = 22;
+    public const int CollectsTargetInterval = 23;
+    public const int CollectsTargetTimer = 24;
+    public const int LayerMask = 25;
+    public const int Radius = 26;
+    public const int ReadyToCollectTargets = 27;
+    public const int TargetBuffer = 28;
+    public const int Hero = 29;
+    public const int HeroAnimator = 30;
 
-    public const int TotalComponents = 23;
+    public const int TotalComponents = 31;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -52,10 +60,18 @@ public static class GameComponentsLookup {
         "EnemyAnimator",
         "EnemyTypeId",
         "SpawnTimer",
+        "CurrentHP",
+        "MaxHP",
         "Direction",
         "Moving",
         "Speed",
         "TurnAlongDirection",
+        "CollectsTargetInterval",
+        "CollectsTargetTimer",
+        "LayerMask",
+        "Radius",
+        "ReadyToCollectTargets",
+        "TargetBuffer",
         "Hero",
         "HeroAnimator"
     };
@@ -78,10 +94,18 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Enemies.EnemyAnimatorComponent),
         typeof(Code.Gameplay.Enemies.EnemyTypeIdComponent),
         typeof(Code.Gameplay.Enemies.SpawnTimer),
+        typeof(Code.Gameplay.Features.Lifetime.CurrentHP),
+        typeof(Code.Gameplay.Features.Lifetime.MaxHP),
         typeof(Code.Gameplay.Features.Movement.DirectionComponent),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Movement.TurnAlongDirection),
+        typeof(Code.Gameplay.Features.TargetCollection.CollectsTargetInterval),
+        typeof(Code.Gameplay.Features.TargetCollection.CollectsTargetTimer),
+        typeof(Code.Gameplay.Features.TargetCollection.LayerMask),
+        typeof(Code.Gameplay.Features.TargetCollection.Radius),
+        typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
+        typeof(Code.Gameplay.Features.TargetCollection.TargetBuffer),
         typeof(Code.Gameplay.Hero.Hero),
         typeof(Code.Gameplay.Hero.HeroAnimatorComponent)
     };

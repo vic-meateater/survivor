@@ -6,7 +6,7 @@ namespace Code.Gameplay.Common.Physics
 {
     public class Physics3DService : IPhysics3DService
     {
-         private static readonly RaycastHit[] Hits = new RaycastHit[128];
+        private static readonly RaycastHit[] Hits = new RaycastHit[128];
         private static readonly Collider[] OverlapHits = new Collider[128];
 
         private readonly ICollisionRegistry _collisionRegistry;
