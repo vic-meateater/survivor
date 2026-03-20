@@ -27,25 +27,31 @@ public static class GameComponentsLookup {
     public const int EnemyAnimator = 16;
     public const int EnemyTypeId = 17;
     public const int SpawnTimer = 18;
-    public const int CurrentHP = 19;
-    public const int Dead = 20;
-    public const int MaxHP = 21;
-    public const int ProcessingDeath = 22;
-    public const int Direction = 23;
-    public const int MovementAvailable = 24;
-    public const int Moving = 25;
-    public const int Speed = 26;
-    public const int TurnAlongDirection = 27;
-    public const int CollectsTargetInterval = 28;
-    public const int CollectsTargetTimer = 29;
-    public const int LayerMask = 30;
-    public const int Radius = 31;
-    public const int ReadyToCollectTargets = 32;
-    public const int TargetBuffer = 33;
-    public const int Hero = 34;
-    public const int HeroAnimator = 35;
+    public const int AbilityID = 19;
+    public const int Armament = 20;
+    public const int TargetLimit = 21;
+    public const int Cooldown = 22;
+    public const int CooldownLeft = 23;
+    public const int CooldownUp = 24;
+    public const int CurrentHP = 25;
+    public const int Dead = 26;
+    public const int MaxHP = 27;
+    public const int ProcessingDeath = 28;
+    public const int Direction = 29;
+    public const int MovementAvailable = 30;
+    public const int Moving = 31;
+    public const int Speed = 32;
+    public const int TurnAlongDirection = 33;
+    public const int CollectsTargetInterval = 34;
+    public const int CollectsTargetTimer = 35;
+    public const int LayerMask = 36;
+    public const int Radius = 37;
+    public const int ReadyToCollectTargets = 38;
+    public const int TargetBuffer = 39;
+    public const int Hero = 40;
+    public const int HeroAnimator = 41;
 
-    public const int TotalComponents = 36;
+    public const int TotalComponents = 42;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -67,6 +73,12 @@ public static class GameComponentsLookup {
         "EnemyAnimator",
         "EnemyTypeId",
         "SpawnTimer",
+        "AbilityID",
+        "Armament",
+        "TargetLimit",
+        "Cooldown",
+        "CooldownLeft",
+        "CooldownUp",
         "CurrentHP",
         "Dead",
         "MaxHP",
@@ -106,6 +118,12 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Enemies.EnemyAnimatorComponent),
         typeof(Code.Gameplay.Enemies.EnemyTypeIdComponent),
         typeof(Code.Gameplay.Enemies.SpawnTimer),
+        typeof(Code.Gameplay.Features.Abilities.AbilityIDComponent),
+        typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.Armament),
+        typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.TargetLimit),
+        typeof(Code.Gameplay.Features.Cooldowns.CooldownComponents.Cooldown),
+        typeof(Code.Gameplay.Features.Cooldowns.CooldownComponents.CooldownLeft),
+        typeof(Code.Gameplay.Features.Cooldowns.CooldownComponents.CooldownUp),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHP),
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHP),
