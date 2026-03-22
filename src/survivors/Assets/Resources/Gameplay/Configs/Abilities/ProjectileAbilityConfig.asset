@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Features.Abilities.Configs.AbilityConfig
   AbilityID: 999
   Levels:
-  - Cooldown: 1
-    ViewPrefab: {fileID: 0}
+  - Cooldown: 3
+    ViewPrefab: {fileID: 4087598138421116373, guid: eada698abe65ddc47ae37a76ff0920e1, type: 3}
     ProjectileSetup:
-      Speed: 0
-      Pierce: 0
-      ContactRadius: 0
+      Damage: 1
+      Speed: 2
+      Pierce: 2
+      ContactRadius: 0.1
+      LifeTime: 15

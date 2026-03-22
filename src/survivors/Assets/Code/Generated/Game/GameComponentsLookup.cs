@@ -28,30 +28,33 @@ public static class GameComponentsLookup {
     public const int EnemyTypeId = 17;
     public const int SpawnTimer = 18;
     public const int AbilityID = 19;
-    public const int Armament = 20;
-    public const int TargetLimit = 21;
-    public const int Cooldown = 22;
-    public const int CooldownLeft = 23;
-    public const int CooldownUp = 24;
-    public const int CurrentHP = 25;
-    public const int Dead = 26;
-    public const int MaxHP = 27;
-    public const int ProcessingDeath = 28;
-    public const int Direction = 29;
-    public const int MovementAvailable = 30;
-    public const int Moving = 31;
-    public const int Speed = 32;
-    public const int TurnAlongDirection = 33;
-    public const int CollectsTargetInterval = 34;
-    public const int CollectsTargetTimer = 35;
-    public const int LayerMask = 36;
-    public const int Radius = 37;
-    public const int ReadyToCollectTargets = 38;
-    public const int TargetBuffer = 39;
-    public const int Hero = 40;
-    public const int HeroAnimator = 41;
+    public const int ProjectileAbility = 20;
+    public const int Armament = 21;
+    public const int TargetLimit = 22;
+    public const int Cooldown = 23;
+    public const int CooldownLeft = 24;
+    public const int CooldownUp = 25;
+    public const int CurrentHP = 26;
+    public const int Dead = 27;
+    public const int MaxHP = 28;
+    public const int ProcessingDeath = 29;
+    public const int Direction = 30;
+    public const int MovementAvailable = 31;
+    public const int Moving = 32;
+    public const int Speed = 33;
+    public const int TurnAlongDirection = 34;
+    public const int CollectsTargetInterval = 35;
+    public const int CollectsTargetTimer = 36;
+    public const int CollectTargetsContinuously = 37;
+    public const int LayerMask = 38;
+    public const int ProcessedTargets = 39;
+    public const int Radius = 40;
+    public const int ReadyToCollectTargets = 41;
+    public const int TargetBuffer = 42;
+    public const int Hero = 43;
+    public const int HeroAnimator = 44;
 
-    public const int TotalComponents = 42;
+    public const int TotalComponents = 45;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -74,6 +77,7 @@ public static class GameComponentsLookup {
         "EnemyTypeId",
         "SpawnTimer",
         "AbilityID",
+        "ProjectileAbility",
         "Armament",
         "TargetLimit",
         "Cooldown",
@@ -90,7 +94,9 @@ public static class GameComponentsLookup {
         "TurnAlongDirection",
         "CollectsTargetInterval",
         "CollectsTargetTimer",
+        "CollectTargetsContinuously",
         "LayerMask",
+        "ProcessedTargets",
         "Radius",
         "ReadyToCollectTargets",
         "TargetBuffer",
@@ -119,6 +125,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Enemies.EnemyTypeIdComponent),
         typeof(Code.Gameplay.Enemies.SpawnTimer),
         typeof(Code.Gameplay.Features.Abilities.AbilityIDComponent),
+        typeof(Code.Gameplay.Features.Abilities.ProjectileAbility),
         typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.Armament),
         typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.TargetLimit),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownComponents.Cooldown),
@@ -135,7 +142,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.TurnAlongDirection),
         typeof(Code.Gameplay.Features.TargetCollection.CollectsTargetInterval),
         typeof(Code.Gameplay.Features.TargetCollection.CollectsTargetTimer),
+        typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsContinuously),
         typeof(Code.Gameplay.Features.TargetCollection.LayerMask),
+        typeof(Code.Gameplay.Features.TargetCollection.ProcessedTargets),
         typeof(Code.Gameplay.Features.TargetCollection.Radius),
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
         typeof(Code.Gameplay.Features.TargetCollection.TargetBuffer),

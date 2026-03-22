@@ -34,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Armaments.ArmamentsComponents.TargetLimit targetLimit { get { return (Code.Gameplay.Features.Armaments.ArmamentsComponents.TargetLimit)GetComponent(GameComponentsLookup.TargetLimit); } }
-    public float TargetLimit { get { return targetLimit.Value; } }
+    public int TargetLimit { get { return targetLimit.Value; } }
     public bool hasTargetLimit { get { return HasComponent(GameComponentsLookup.TargetLimit); } }
 
-    public GameEntity AddTargetLimit(float newValue) {
+    public GameEntity AddTargetLimit(int newValue) {
         var index = GameComponentsLookup.TargetLimit;
         var component = (Code.Gameplay.Features.Armaments.ArmamentsComponents.TargetLimit)CreateComponent(index, typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.TargetLimit));
         component.Value = newValue;
@@ -45,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceTargetLimit(float newValue) {
+    public GameEntity ReplaceTargetLimit(int newValue) {
         var index = GameComponentsLookup.TargetLimit;
         var component = (Code.Gameplay.Features.Armaments.ArmamentsComponents.TargetLimit)CreateComponent(index, typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.TargetLimit));
         component.Value = newValue;

@@ -4,7 +4,9 @@ using Entitas;
 namespace Code.Gameplay.Features.TargetCollection
 {
     [Game] public class ReadyToCollectTargets : IComponent { }
+    [Game] public class CollectTargetsContinuously : IComponent { }
     [Game] public class TargetBuffer : IComponent { public List<int> Value; }
+    [Game] public class ProcessedTargets : IComponent { public List<int> Value; }
     
     [Game] public class CollectsTargetInterval : IComponent { public float Value; }
     [Game] public class CollectsTargetTimer : IComponent { public float Value; }
