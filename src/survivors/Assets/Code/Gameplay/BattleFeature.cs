@@ -2,7 +2,8 @@
 using Code.Gameplay.Enemies;
 using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Armaments;
-using Code.Gameplay.Features.DamageApplication;
+using Code.Gameplay.Features.EffectApplication;
+using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.TargetCollection;
@@ -27,8 +28,9 @@ namespace Code.Gameplay
 
 
             Add(systems.Create<TargetCollectionFeature>());
-            Add(systems.Create<DamageApplicationFeature>());
+            Add(systems.Create<EffectApplicationFeature>());
             Add(systems.Create<ArmamentFeature>());
+            Add(systems.Create<EffectFeature>());
             
             Add(systems.Create<DeathFeature>());
 

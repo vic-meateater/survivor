@@ -29,7 +29,7 @@ namespace Code.Gameplay.Features.Armaments.Factory
                     .AddId(_identifiers.Next())
                     .AddWorldPosition(at)
                     .AddSpeed(setup.Speed)
-                    .AddDamage(setup.Damage)
+                    .AddEffectSetups(abilityLevel.EffectSetups)
                     .AddRadius(setup.ContactRadius)
                     .AddTargetBuffer(new List<int>(16))
                     .AddProcessedTargets(new List<int>(16))

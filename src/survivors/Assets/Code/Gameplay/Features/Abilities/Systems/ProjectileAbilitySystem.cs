@@ -37,6 +37,8 @@ namespace Code.Gameplay.Features.Abilities.Systems
                 .AllOf(
                     GameMatcher.Hero,
                     GameMatcher.WorldPosition
+                )
+                .NoneOf(GameMatcher.Dead
                 ));
 
             _enemies = game.GetGroup(GameMatcher
@@ -56,6 +58,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
 
                 _armamentFactory
                     .CreateProjectile(1, hero.WorldPosition)
+                    .AddProducerID(hero.Id)
                     .ReplaceDirection((FirstAvailableTarget().WorldPosition - hero.WorldPosition).normalized)
                     .With(x => x.isMoving = true);
 

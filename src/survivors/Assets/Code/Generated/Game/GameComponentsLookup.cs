@@ -30,32 +30,38 @@ public static class GameComponentsLookup {
     public const int AbilityID = 19;
     public const int ProjectileAbility = 20;
     public const int Armament = 21;
-    public const int Processed = 22;
-    public const int TargetLimit = 23;
-    public const int Cooldown = 24;
-    public const int CooldownLeft = 25;
-    public const int CooldownUp = 26;
-    public const int CurrentHP = 27;
-    public const int Dead = 28;
-    public const int MaxHP = 29;
-    public const int ProcessingDeath = 30;
-    public const int Direction = 31;
-    public const int MovementAvailable = 32;
-    public const int Moving = 33;
-    public const int Speed = 34;
-    public const int TurnAlongDirection = 35;
-    public const int CollectsTargetInterval = 36;
-    public const int CollectsTargetTimer = 37;
-    public const int CollectTargetsContinuously = 38;
-    public const int LayerMask = 39;
-    public const int ProcessedTargets = 40;
-    public const int Radius = 41;
-    public const int ReadyToCollectTargets = 42;
-    public const int TargetBuffer = 43;
-    public const int Hero = 44;
-    public const int HeroAnimator = 45;
+    public const int EffectSetups = 22;
+    public const int Processed = 23;
+    public const int TargetLimit = 24;
+    public const int Cooldown = 25;
+    public const int CooldownLeft = 26;
+    public const int CooldownUp = 27;
+    public const int DamageEffect = 28;
+    public const int Effect = 29;
+    public const int EffectValue = 30;
+    public const int ProducerID = 31;
+    public const int TargetID = 32;
+    public const int CurrentHP = 33;
+    public const int Dead = 34;
+    public const int MaxHP = 35;
+    public const int ProcessingDeath = 36;
+    public const int Direction = 37;
+    public const int MovementAvailable = 38;
+    public const int Moving = 39;
+    public const int Speed = 40;
+    public const int TurnAlongDirection = 41;
+    public const int CollectsTargetInterval = 42;
+    public const int CollectsTargetTimer = 43;
+    public const int CollectTargetsContinuously = 44;
+    public const int LayerMask = 45;
+    public const int ProcessedTargets = 46;
+    public const int Radius = 47;
+    public const int ReadyToCollectTargets = 48;
+    public const int TargetBuffer = 49;
+    public const int Hero = 50;
+    public const int HeroAnimator = 51;
 
-    public const int TotalComponents = 46;
+    public const int TotalComponents = 52;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -80,11 +86,17 @@ public static class GameComponentsLookup {
         "AbilityID",
         "ProjectileAbility",
         "Armament",
+        "EffectSetups",
         "Processed",
         "TargetLimit",
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
+        "DamageEffect",
+        "Effect",
+        "EffectValue",
+        "ProducerID",
+        "TargetID",
         "CurrentHP",
         "Dead",
         "MaxHP",
@@ -129,11 +141,17 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.AbilityIDComponent),
         typeof(Code.Gameplay.Features.Abilities.ProjectileAbility),
         typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.Armament),
+        typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.EffectSetups),
         typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.Processed),
         typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.TargetLimit),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownComponents.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownComponents.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownComponents.CooldownUp),
+        typeof(Code.Gameplay.Features.Effects.DamageEffect),
+        typeof(Code.Gameplay.Features.Effects.Effect),
+        typeof(Code.Gameplay.Features.Effects.EffectValue),
+        typeof(Code.Gameplay.Features.Effects.ProducerID),
+        typeof(Code.Gameplay.Features.Effects.TargetID),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHP),
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHP),
