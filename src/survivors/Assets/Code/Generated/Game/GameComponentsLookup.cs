@@ -30,31 +30,32 @@ public static class GameComponentsLookup {
     public const int AbilityID = 19;
     public const int ProjectileAbility = 20;
     public const int Armament = 21;
-    public const int TargetLimit = 22;
-    public const int Cooldown = 23;
-    public const int CooldownLeft = 24;
-    public const int CooldownUp = 25;
-    public const int CurrentHP = 26;
-    public const int Dead = 27;
-    public const int MaxHP = 28;
-    public const int ProcessingDeath = 29;
-    public const int Direction = 30;
-    public const int MovementAvailable = 31;
-    public const int Moving = 32;
-    public const int Speed = 33;
-    public const int TurnAlongDirection = 34;
-    public const int CollectsTargetInterval = 35;
-    public const int CollectsTargetTimer = 36;
-    public const int CollectTargetsContinuously = 37;
-    public const int LayerMask = 38;
-    public const int ProcessedTargets = 39;
-    public const int Radius = 40;
-    public const int ReadyToCollectTargets = 41;
-    public const int TargetBuffer = 42;
-    public const int Hero = 43;
-    public const int HeroAnimator = 44;
+    public const int Processed = 22;
+    public const int TargetLimit = 23;
+    public const int Cooldown = 24;
+    public const int CooldownLeft = 25;
+    public const int CooldownUp = 26;
+    public const int CurrentHP = 27;
+    public const int Dead = 28;
+    public const int MaxHP = 29;
+    public const int ProcessingDeath = 30;
+    public const int Direction = 31;
+    public const int MovementAvailable = 32;
+    public const int Moving = 33;
+    public const int Speed = 34;
+    public const int TurnAlongDirection = 35;
+    public const int CollectsTargetInterval = 36;
+    public const int CollectsTargetTimer = 37;
+    public const int CollectTargetsContinuously = 38;
+    public const int LayerMask = 39;
+    public const int ProcessedTargets = 40;
+    public const int Radius = 41;
+    public const int ReadyToCollectTargets = 42;
+    public const int TargetBuffer = 43;
+    public const int Hero = 44;
+    public const int HeroAnimator = 45;
 
-    public const int TotalComponents = 45;
+    public const int TotalComponents = 46;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -79,6 +80,7 @@ public static class GameComponentsLookup {
         "AbilityID",
         "ProjectileAbility",
         "Armament",
+        "Processed",
         "TargetLimit",
         "Cooldown",
         "CooldownLeft",
@@ -127,6 +129,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.AbilityIDComponent),
         typeof(Code.Gameplay.Features.Abilities.ProjectileAbility),
         typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.Armament),
+        typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.Processed),
         typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.TargetLimit),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownComponents.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownComponents.CooldownLeft),
