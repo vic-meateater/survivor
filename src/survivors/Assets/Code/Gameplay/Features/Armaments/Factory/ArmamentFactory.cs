@@ -30,6 +30,7 @@ namespace Code.Gameplay.Features.Armaments.Factory
                     .AddWorldPosition(at)
                     .AddSpeed(setup.Speed)
                     .AddEffectSetups(abilityLevel.EffectSetups)
+                    .AddStatusSetups(abilityLevel.StatusSetups)
                     .AddRadius(setup.ContactRadius)
                     .AddTargetBuffer(new List<int>(16))
                     .AddProcessedTargets(new List<int>(16))

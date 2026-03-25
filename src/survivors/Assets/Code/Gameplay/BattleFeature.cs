@@ -6,6 +6,7 @@ using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Movement;
+using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Hero;
 using Code.Gameplay.Input;
@@ -31,6 +32,7 @@ namespace Code.Gameplay
             Add(systems.Create<EffectApplicationFeature>());
             Add(systems.Create<ArmamentFeature>());
             Add(systems.Create<EffectFeature>());
+            Add(systems.Create<StatusFeature>());
             
             Add(systems.Create<DeathFeature>());
 

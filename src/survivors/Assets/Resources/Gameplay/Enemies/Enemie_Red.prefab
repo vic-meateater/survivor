@@ -240,6 +240,8 @@ GameObject:
   - component: {fileID: 8926817677874582099}
   - component: {fileID: 5164869103380736341}
   - component: {fileID: 5910924061305464004}
+  - component: {fileID: 852762028423493719}
+  - component: {fileID: 4499882626465269149}
   m_Layer: 7
   m_Name: Enemie_Red
   m_TagString: Untagged
@@ -314,3 +316,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Enemies.Registrars.EnemyAnimatorRegistrar
   EntityView: {fileID: 8926817677874582099}
   EnemyAnimator: {fileID: 523831146579541419}
+--- !u!114 &852762028423493719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913815682638500911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6a058f969f4b8983bdbd749a304a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Common.Visuals.StatusVisuals.StatusVisuals
+  Renderer: {fileID: 5020949966420890722}
+  Animator: {fileID: 0}
+  FreezeColor: {r: 0.21960784, g: 0.6392157, b: 0.74509805, a: 1}
+  FreezeOutlineSize: 3
+  FreezeOutlineSmoothness: 8
+  PoisonColor: {r: 0.1960784, g: 0.8039216, b: 0.1960784, a: 1}
+  PoisonColorIntensity: 0.6
+--- !u!114 &4499882626465269149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913815682638500911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef4cc500b5b6a3942935b85eb5e9ce92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Common.Visuals.StatusVisuals.StatusVisualsRegistrar
+  EntityView: {fileID: 8926817677874582099}
+  StatusVisuals: {fileID: 852762028423493719}
