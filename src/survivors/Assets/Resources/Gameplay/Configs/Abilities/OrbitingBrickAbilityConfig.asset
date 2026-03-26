@@ -12,22 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d77287d777f46caae449bc801419b80, type: 3}
   m_Name: OrbitingBrickAbilityConfig
   m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Features.Abilities.Configs.AbilityConfig
-  AbilityID: 999
+  AbilityID: 2
   Levels:
-  - Cooldown: 3
-    ViewPrefab: {fileID: 4087598138421116373, guid: eada698abe65ddc47ae37a76ff0920e1, type: 3}
+  - Cooldown: 5
+    ViewPrefab: {fileID: 4087598138421116373, guid: ff3a941b093abe24bb517160852d442c, type: 3}
     EffectSetups:
     - EffectTypeID: 1
-      Value: 0.1
-    StatusSetups:
-    - StatusTypeID: 2
-      Value: -2
-      Duration: 3
-      Period: 0
+      Value: 0.5
+    StatusSetups: []
     ProjectileSetup:
-      ProjectileCount: 1
+      ProjectileCount: 3
       Speed: 2
-      Pierce: 2
+      Pierce: 0
       ContactRadius: 0.1
-      LifeTime: 15
-      OrbitRadius: 0
+      LifeTime: 3
+      OrbitRadius: 3
+    AuraSetup:
+      Radius: 0
+      Interval: 0

@@ -27,17 +27,39 @@ namespace Code.Gameplay.Features.Armaments.Factory
 
       return CreateProjectileEntity(at, setup, abilityLevel)
         .AddParentAbility(AbilityID.Projectile);
-    } 
-    
+    }
+
     public GameEntity CreateOrbitingBrick(int level, Vector3 at, float phase)
     {
       AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityID.OrbitingBrick, level);
       ProjectileSetup setup = abilityLevel.ProjectileSetup;
 
       return CreateProjectileEntity(at, setup, abilityLevel)
-        .AddParentAbility(AbilityID.OrbitingBrick)
-        .AddOrbitPhase(phase)
-        .AddOrbitRadius(setup.OrbitRadius)
+          .AddParentAbility(AbilityID.OrbitingBrick)
+          .AddOrbitPhase(phase)
+          .AddOrbitRadius(setup.OrbitRadius)
+        ;
+    }
+
+    public GameEntity CreateEffectAura(AbilityID parentAbilityId, int producerId, int level)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityID.DudeWordAura, level);
+      AuraSetup setup = abilityLevel.AuraSetup;
+
+      return CreateEntity.Empty()
+          .AddId(_identifiers.Next())
+          .AddParentAbility(parentAbilityId)
+          .AddViewPrefab(abilityLevel.ViewPrefab)
+          .AddLayerMask(CollisionLayer.Enemy.AsMask())
+          .AddRadius(setup.Radius)
+          .AddCollectsTargetInterval(setup.Interval)
+          .AddCollectsTargetTimer(0)
+          .With(x => x.AddEffectSetups(abilityLevel.EffectSetups),
+            when: !abilityLevel.EffectSetups.IsNullOrEmpty())
+          .With(x => x.AddStatusSetups(abilityLevel.StatusSetups),
+            when: !abilityLevel.StatusSetups.IsNullOrEmpty())
+          .AddTargetBuffer(new List<int>(16))
+          .AddProducerID(producerId)
         ;
     }
 

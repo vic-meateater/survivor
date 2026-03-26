@@ -28,63 +28,65 @@ public static class GameComponentsLookup {
     public const int EnemyTypeId = 17;
     public const int SpawnTimer = 18;
     public const int AbilityID = 19;
-    public const int OrbitingBrickAbility = 20;
-    public const int ParentAbility = 21;
-    public const int ProjectileAbility = 22;
-    public const int Armament = 23;
-    public const int EffectSetups = 24;
-    public const int Processed = 25;
-    public const int StatusSetups = 26;
-    public const int TargetLimit = 27;
-    public const int BaseStats = 28;
-    public const int StatChange = 29;
-    public const int StatModifiers = 30;
-    public const int Cooldown = 31;
-    public const int CooldownLeft = 32;
-    public const int CooldownUp = 33;
-    public const int DamageEffect = 34;
-    public const int Effect = 35;
-    public const int EffectValue = 36;
-    public const int HealEffect = 37;
-    public const int ProducerID = 38;
-    public const int TargetID = 39;
-    public const int CurrentHP = 40;
-    public const int Dead = 41;
-    public const int MaxHP = 42;
-    public const int ProcessingDeath = 43;
-    public const int Direction = 44;
-    public const int MovementAvailable = 45;
-    public const int Moving = 46;
-    public const int OrbitCenterFollowTarget = 47;
-    public const int OrbitCenterPosition = 48;
-    public const int OrbitPhase = 49;
-    public const int OrbitRadius = 50;
-    public const int Speed = 51;
-    public const int TurnAlongDirection = 52;
-    public const int Affected = 53;
-    public const int Applied = 54;
-    public const int ApplierStatusLink = 55;
-    public const int Duration = 56;
-    public const int Freeze = 57;
-    public const int Period = 58;
-    public const int Poison = 59;
-    public const int Status = 60;
-    public const int StatusTypeID = 61;
-    public const int TimeLeft = 62;
-    public const int TimeSinceLastTick = 63;
-    public const int Unapplied = 64;
-    public const int CollectsTargetInterval = 65;
-    public const int CollectsTargetTimer = 66;
-    public const int CollectTargetsContinuously = 67;
-    public const int LayerMask = 68;
-    public const int ProcessedTargets = 69;
-    public const int Radius = 70;
-    public const int ReadyToCollectTargets = 71;
-    public const int TargetBuffer = 72;
-    public const int Hero = 73;
-    public const int HeroAnimator = 74;
+    public const int DudeWordAbility = 20;
+    public const int OrbitingBrickAbility = 21;
+    public const int ParentAbility = 22;
+    public const int ProjectileAbility = 23;
+    public const int Armament = 24;
+    public const int EffectSetups = 25;
+    public const int FollowingProducer = 26;
+    public const int Processed = 27;
+    public const int StatusSetups = 28;
+    public const int TargetLimit = 29;
+    public const int BaseStats = 30;
+    public const int StatChange = 31;
+    public const int StatModifiers = 32;
+    public const int Cooldown = 33;
+    public const int CooldownLeft = 34;
+    public const int CooldownUp = 35;
+    public const int DamageEffect = 36;
+    public const int Effect = 37;
+    public const int EffectValue = 38;
+    public const int HealEffect = 39;
+    public const int ProducerID = 40;
+    public const int TargetID = 41;
+    public const int CurrentHP = 42;
+    public const int Dead = 43;
+    public const int MaxHP = 44;
+    public const int ProcessingDeath = 45;
+    public const int Direction = 46;
+    public const int MovementAvailable = 47;
+    public const int Moving = 48;
+    public const int OrbitCenterFollowTarget = 49;
+    public const int OrbitCenterPosition = 50;
+    public const int OrbitPhase = 51;
+    public const int OrbitRadius = 52;
+    public const int Speed = 53;
+    public const int TurnAlongDirection = 54;
+    public const int Affected = 55;
+    public const int Applied = 56;
+    public const int ApplierStatusLink = 57;
+    public const int Duration = 58;
+    public const int Freeze = 59;
+    public const int Period = 60;
+    public const int Poison = 61;
+    public const int Status = 62;
+    public const int StatusTypeID = 63;
+    public const int TimeLeft = 64;
+    public const int TimeSinceLastTick = 65;
+    public const int Unapplied = 66;
+    public const int CollectsTargetInterval = 67;
+    public const int CollectsTargetTimer = 68;
+    public const int CollectTargetsContinuously = 69;
+    public const int LayerMask = 70;
+    public const int ProcessedTargets = 71;
+    public const int Radius = 72;
+    public const int ReadyToCollectTargets = 73;
+    public const int TargetBuffer = 74;
+    public const int Hero = 75;
+    public const int HeroAnimator = 76;
 
-    public const int TotalComponents = 75;
+    public const int TotalComponents = 77;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -107,11 +109,13 @@ public static class GameComponentsLookup {
         "EnemyTypeId",
         "SpawnTimer",
         "AbilityID",
+        "DudeWordAbility",
         "OrbitingBrickAbility",
         "ParentAbility",
         "ProjectileAbility",
         "Armament",
         "EffectSetups",
+        "FollowingProducer",
         "Processed",
         "StatusSetups",
         "TargetLimit",
@@ -185,11 +189,13 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Enemies.EnemyTypeIdComponent),
         typeof(Code.Gameplay.Enemies.SpawnTimer),
         typeof(Code.Gameplay.Features.Abilities.AbilityIDComponent),
+        typeof(Code.Gameplay.Features.Abilities.DudeWordAbility),
         typeof(Code.Gameplay.Features.Abilities.OrbitingBrickAbility),
         typeof(Code.Gameplay.Features.Abilities.ParentAbility),
         typeof(Code.Gameplay.Features.Abilities.ProjectileAbility),
         typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.Armament),
         typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.EffectSetups),
+        typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.FollowingProducer),
         typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.Processed),
         typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.StatusSetups),
         typeof(Code.Gameplay.Features.Armaments.ArmamentsComponents.TargetLimit),

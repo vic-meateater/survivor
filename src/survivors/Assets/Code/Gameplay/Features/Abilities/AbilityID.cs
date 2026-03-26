@@ -4,7 +4,8 @@ namespace Code.Gameplay.Features.Abilities
     {
         Unknown = 0,
         Stab = 1,
-        OrbitingBrick = 2, //test
+        OrbitingBrick = 2,
+        DudeWordAura = 3,//test
         Projectile = 999, //test
     }
 }
