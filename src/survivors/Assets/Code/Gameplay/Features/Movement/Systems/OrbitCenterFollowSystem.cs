@@ -4,11 +4,13 @@ namespace Code.Gameplay.Features.Movement.Systems
 {
     public class OrbitCenterFollowSystem : IExecuteSystem
     {
+        private readonly GameContext _game;
         private readonly IGroup<GameEntity> _orbitCenters;
         private IGroup<GameEntity> _targets;
 
         public OrbitCenterFollowSystem(GameContext game)
         {
+            _game = game;
             _orbitCenters = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.OrbitCenterPosition, 
@@ -23,9 +25,9 @@ namespace Code.Gameplay.Features.Movement.Systems
         public void Execute()
         {
             foreach (GameEntity orbitCenter in _orbitCenters)
-            foreach (GameEntity target in _targets)
             {
-                if(orbitCenter.OrbitCenterFollowTarget == target.Id)
+                GameEntity target = _game.GetEntityWithId(orbitCenter.OrbitCenterFollowTarget);
+                if (target != null)
                     orbitCenter.ReplaceOrbitCenterPosition(target.WorldPosition);
             }
         }

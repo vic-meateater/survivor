@@ -27,7 +27,7 @@ namespace Code.Gameplay.Features.Effects.System
                 if(target.isDead) 
                     continue;
 
-                if (target.hasMaxHP && target.hasMaxHP)
+                if (target.hasMaxHP && target.hasCurrentHP)
                 {
                     float newValue = Math.Min(target.CurrentHP + effect.EffectValue, target.MaxHP);
                     target.ReplaceCurrentHP(newValue);
