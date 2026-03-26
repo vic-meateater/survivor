@@ -3,5 +3,6 @@
     public interface IAbilityFactory
     {
         GameEntity CreateProjectileAbility(int level);
+        GameEntity CreateOrbitingBrickAbility(int level);
     }
 }

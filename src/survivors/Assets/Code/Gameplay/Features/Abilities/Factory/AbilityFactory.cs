@@ -30,5 +30,18 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .With(x => x.isProjectileAbility = true)
                 .PutOnCooldown();
         }
+        
+        public GameEntity CreateOrbitingBrickAbility(int level)
+        {
+            AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityID.OrbitingBrick, level);
+            
+            return 
+                CreateEntity.Empty()
+                    .AddId(_identifiers.Next())
+                    .AddAbilityID(AbilityID.OrbitingBrick)
+                    .AddCooldown(abilityLevel.Cooldown)
+                    .With(x => x.isOrbitingBrickAbility = true)
+                    .PutOnCooldown();
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace Code.Gameplay.Features.Abilities
         {
             Add(systems.Create<CooldownSystem>());
             Add(systems.Create<ProjectileAbilitySystem>());
+            Add(systems.Create<OrbitingBrickAbilitySystem>());
         }   
     }
 }

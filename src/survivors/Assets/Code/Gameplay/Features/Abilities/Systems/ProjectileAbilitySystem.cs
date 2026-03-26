@@ -5,7 +5,6 @@ using Code.Gameplay.Features.Armaments.Factory;
 using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.StaticData;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Systems
 {

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d77287d777f46caae449bc801419b80, type: 3}
-  m_Name: ProjectileAbilityConfig
+  m_Name: OrbitingBrickAbilityConfig
   m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Features.Abilities.Configs.AbilityConfig
   AbilityID: 999
   Levels:

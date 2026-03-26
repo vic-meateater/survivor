@@ -9,40 +9,60 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Armaments.Factory
 {
-    public class ArmamentFactory : IArmamentFactory
+  public class ArmamentFactory : IArmamentFactory
+  {
+    private readonly IIdentifierService _identifiers;
+    private readonly IStaticDataService _staticDataService;
+
+    public ArmamentFactory(IIdentifierService identifiers, IStaticDataService staticDataService)
     {
-        private readonly IIdentifierService _identifiers;
-        private readonly IStaticDataService _staticDataService;
-
-        public ArmamentFactory(IIdentifierService identifiers, IStaticDataService staticDataService)
-        {
-            _identifiers = identifiers;
-            _staticDataService = staticDataService;
-        }
-
-        public GameEntity CreateProjectile(int level, Vector3 at)
-        {
-            AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityID.Projectile, level);
-            ProjectileSetup setup = abilityLevel.ProjectileSetup;
-
-            return CreateEntity.Empty()
-                    .AddId(_identifiers.Next())
-                    .AddWorldPosition(at)
-                    .AddSpeed(setup.Speed)
-                    .AddEffectSetups(abilityLevel.EffectSetups)
-                    .AddStatusSetups(abilityLevel.StatusSetups)
-                    .AddRadius(setup.ContactRadius)
-                    .AddTargetBuffer(new List<int>(16))
-                    .AddProcessedTargets(new List<int>(16))
-                    .AddLayerMask(CollisionLayer.Enemy.AsMask())
-                    .AddTargetLimit(setup.Pierce)
-                    .AddViewPrefab(abilityLevel.ViewPrefab)
-                    .AddSelfDestructTimer(setup.LifeTime)
-                    .With(x => x.isMovementAvailable = true)
-                    .With(x=>x.isReadyToCollectTargets = true)
-                    .With(x => x.isArmament = true)
-                    .With(x=>x.isCollectTargetsContinuously = true)
-                ;
-        }
+      _identifiers = identifiers;
+      _staticDataService = staticDataService;
     }
+
+    public GameEntity CreateProjectile(int level, Vector3 at)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityID.Projectile, level);
+      ProjectileSetup setup = abilityLevel.ProjectileSetup;
+
+      return CreateProjectileEntity(at, setup, abilityLevel)
+        .AddParentAbility(AbilityID.Projectile);
+    } 
+    
+    public GameEntity CreateOrbitingBrick(int level, Vector3 at, float phase)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityID.OrbitingBrick, level);
+      ProjectileSetup setup = abilityLevel.ProjectileSetup;
+
+      return CreateProjectileEntity(at, setup, abilityLevel)
+        .AddParentAbility(AbilityID.OrbitingBrick)
+        .AddOrbitPhase(phase)
+        .AddOrbitRadius(setup.OrbitRadius)
+        ;
+    }
+
+    private GameEntity CreateProjectileEntity(Vector3 at, ProjectileSetup setup, AbilityLevel abilityLevel)
+    {
+      return CreateEntity.Empty()
+          .AddId(_identifiers.Next())
+          .AddWorldPosition(at)
+          .AddSpeed(setup.Speed)
+          .With(x => x.AddEffectSetups(abilityLevel.EffectSetups),
+            when: !abilityLevel.EffectSetups.IsNullOrEmpty())
+          .With(x => x.AddStatusSetups(abilityLevel.StatusSetups),
+            when: !abilityLevel.StatusSetups.IsNullOrEmpty())
+          .With(x => x.AddTargetLimit(setup.Pierce), when: setup.Pierce > 0)
+          .AddRadius(setup.ContactRadius)
+          .AddTargetBuffer(new List<int>(16))
+          .AddProcessedTargets(new List<int>(16))
+          .AddLayerMask(CollisionLayer.Enemy.AsMask())
+          .AddViewPrefab(abilityLevel.ViewPrefab)
+          .AddSelfDestructTimer(setup.LifeTime)
+          .With(x => x.isMovementAvailable = true)
+          .With(x => x.isReadyToCollectTargets = true)
+          .With(x => x.isArmament = true)
+          .With(x => x.isCollectTargetsContinuously = true)
+        ;
+    }
+  }
 }

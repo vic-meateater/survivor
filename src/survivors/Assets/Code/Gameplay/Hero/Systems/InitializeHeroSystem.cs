@@ -25,6 +25,7 @@ namespace Code.Gameplay.Hero.Systems
         {
             _heroFactory.CreateHero(_levelDataProvider.StartPoint);
             _abilityFactory.CreateProjectileAbility(1);
+            _abilityFactory.CreateOrbitingBrickAbility(1);
         }
     }
 }
