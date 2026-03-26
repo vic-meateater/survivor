@@ -4,5 +4,6 @@ namespace Code.Gameplay.Features.Statuses
     {
         Unknown = 0,
         Poison = 1,
+        Freeze = 2,
     }
 }

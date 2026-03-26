@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Effects;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
@@ -38,15 +39,25 @@ namespace Code.Gameplay.Enemies.Factory
 
         private GameEntity CreateChushpan(Vector3 at)
         {
+            Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()
+                    .With(x => x[Stats.Speed] = 1)
+                    .With(x => x[Stats.MaxHp] = 3)
+                    .With(x => x[Stats.Damage] = 1)
+                ;
+
+
             return CreateEntity.Empty()
                     .AddId(_identifiers.Next())
                     .AddEnemyTypeId(EnemyTypeId.Chushpan)
                     .AddWorldPosition(at)
                     .AddDirection(Vector3.zero)
-                    .AddMaxHP(3)
-                    .AddCurrentHP(3)
-                    .AddEffectSetups(new List<EffectSetup>(){new (){EffectTypeID = EffectTypeID.Damage, Value = 1}})
-                    .AddSpeed(1)
+                    .AddBaseStats(baseStats)
+                    .AddStatModifiers(InitStats.EmptyStatDictionary())
+                    .AddMaxHP(baseStats[Stats.MaxHp])
+                    .AddCurrentHP(baseStats[Stats.MaxHp])
+                    .AddEffectSetups(
+                        new List<EffectSetup>() { new() { EffectTypeID = EffectTypeID.Damage, Value = baseStats[Stats.Damage] } })
+                    .AddSpeed(baseStats[Stats.Speed])
                     .AddTargetBuffer(new List<int>(1))
                     .AddRadius(2.5f)
                     .AddCollectsTargetInterval(0.5f)

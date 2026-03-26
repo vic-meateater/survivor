@@ -2,6 +2,7 @@
 using Code.Gameplay.Enemies;
 using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Armaments;
+using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Lifetime;
@@ -33,6 +34,7 @@ namespace Code.Gameplay
             Add(systems.Create<ArmamentFeature>());
             Add(systems.Create<EffectFeature>());
             Add(systems.Create<StatusFeature>());
+            Add(systems.Create<StatFeature>());
             
             Add(systems.Create<DeathFeature>());
 
