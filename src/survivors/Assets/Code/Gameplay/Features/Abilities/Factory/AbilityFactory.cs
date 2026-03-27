@@ -43,5 +43,13 @@ namespace Code.Gameplay.Features.Abilities.Factory
                     .With(x => x.isOrbitingBrickAbility = true)
                     .PutOnCooldown();
         }
+
+        public GameEntity CreateDudeWordAuraAbility()
+        {
+            return CreateEntity.Empty()
+                .AddId(_identifiers.Next())
+                .AddAbilityID(AbilityID.DudeWordAura)
+                .With(x => x.isDudeWordAbility = true);
+        }
     }
 }

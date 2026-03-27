@@ -60,6 +60,8 @@ namespace Code.Gameplay.Features.Armaments.Factory
             when: !abilityLevel.StatusSetups.IsNullOrEmpty())
           .AddTargetBuffer(new List<int>(16))
           .AddProducerID(producerId)
+          .AddWorldPosition(Vector3.zero)
+          .With(x => x.isFollowingProducer = true)
         ;
     }
 

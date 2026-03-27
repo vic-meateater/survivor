@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Code.Gameplay.Features.Abilities;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Armaments.Factory
 {
@@ -6,5 +7,6 @@ namespace Code.Gameplay.Features.Armaments.Factory
     {
         GameEntity CreateProjectile(int level, Vector3 at);
         GameEntity CreateOrbitingBrick(int level, Vector3 at, float phase);
+        GameEntity CreateEffectAura(AbilityID parentAbilityId, int producerId, int level);
     }
 }

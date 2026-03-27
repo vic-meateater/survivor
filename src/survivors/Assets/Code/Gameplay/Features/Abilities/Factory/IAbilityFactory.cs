@@ -4,5 +4,6 @@
     {
         GameEntity CreateProjectileAbility(int level);
         GameEntity CreateOrbitingBrickAbility(int level);
+        GameEntity CreateDudeWordAuraAbility();
     }
 }
