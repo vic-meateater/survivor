@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4556492324494036985}
   - component: {fileID: 4087598138421116373}
   - component: {fileID: 8193719773627532400}
+  - component: {fileID: 6887522658558199491}
+  - component: {fileID: 530479818523610302}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -59,6 +61,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Common.Registrars.TransformRegistrar
   EntityView: {fileID: 4087598138421116373}
+--- !u!114 &6887522658558199491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3387848722806362689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1701a893941d4e99ba999e5507ef4340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Common.Visuals.Enchants.EnchantVisualsRegistrar
+  EntityView: {fileID: 4087598138421116373}
+  EnchantVisuals: {fileID: 530479818523610302}
+--- !u!114 &530479818523610302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3387848722806362689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fea46d9a21f47a1a494e6ddce632159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Common.Visuals.Enchants.EnchantVisuals
+  Renderer: {fileID: 993431791693468000}
+  FreezeOutlineColor: {r: 0.21960784, g: 0.6392157, b: 0.74509805, a: 1}
+  FreezeOutlineSize: 3
+  FreezeOutlineSmoothness: 8
+  PoisonColor: {r: 0.21960782, g: 0.74509805, b: 0.363049, a: 1}
+  PoisonColorIntensity: 0.6
 --- !u!1 &4106502708120921451
 GameObject:
   m_ObjectHideFlags: 0
