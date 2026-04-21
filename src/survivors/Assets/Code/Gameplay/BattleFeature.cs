@@ -7,6 +7,7 @@ using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.Features.Lifetime;
+using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.TargetCollection;
@@ -40,6 +41,8 @@ namespace Code.Gameplay
             Add(systems.Create<StatFeature>());
             
             Add(systems.Create<DeathFeature>());
+            
+            Add(systems.Create<LootingFeature>());
 
             Add(systems.Create<HeroDeathFeature>());
             Add(systems.Create<EnemyDeathFeature>());

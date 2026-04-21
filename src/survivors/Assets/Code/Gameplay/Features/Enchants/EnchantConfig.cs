@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Enchants
 {
-  [CreateAssetMenu(menuName = "Survivors/Enchan Config", fileName = "_enchantConfig")]
+  [CreateAssetMenu(menuName = "Survivors/Enchant Config", fileName = "_enchantConfig")]
   public class EnchantConfig : ScriptableObject
   {
     public EnchantTypeID TypeID;
