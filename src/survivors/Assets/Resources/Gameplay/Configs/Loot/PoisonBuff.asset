@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Features.Loot.Configs.LootConfig
   LootTypeID: 3
   Experience: 0
-  ViewPrefab: {fileID: 0}
+  ViewPrefab: {fileID: 5043002131117212925, guid: f9921ac825288964987c613013793b24, type: 3}
   EffectSetups: []
   StatusSetups:
   - StatusTypeID: 3

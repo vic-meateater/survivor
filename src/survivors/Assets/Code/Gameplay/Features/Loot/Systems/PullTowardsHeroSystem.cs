@@ -29,10 +29,10 @@ namespace Code.Gameplay.Features.Loot.Systems
       foreach (GameEntity hero in _heroes)
       foreach (GameEntity pullable in _pullables.GetEntities(_buffer))
       {
-        pullable.ReplaceWorldPosition((hero.WorldPosition - pullable.WorldPosition).normalized);
-        pullable.ReplaceSpeed(pullable.Speed * 1.5f);
-        pullable.isMoving = true;
-        pullable.isMovementAvailable = true;
+        pullable.ReplaceDirection((hero.WorldPosition - pullable.WorldPosition).normalized);
+        // pullable.ReplaceSpeed(pullable.Speed * 1.5f);
+        // pullable.isMoving = true;
+        // pullable.isMovementAvailable = true;
       }
     }
   }

@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 1266916046733176083}
   - component: {fileID: 5043002131117212925}
   - component: {fileID: 1481246975219312817}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PoisonBuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}

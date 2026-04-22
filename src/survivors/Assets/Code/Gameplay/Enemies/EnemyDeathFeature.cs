@@ -8,6 +8,7 @@ namespace Code.Gameplay.Enemies
         public EnemyDeathFeature(ISystemFactory systems)
         {
             Add(systems.Create<EnemyDeathSystem>());
+            Add(systems.Create<EnemyDropLootSystem>());
             
             Add(systems.Create<FinalizeEnemyDeathProcessingSystem>());
         }

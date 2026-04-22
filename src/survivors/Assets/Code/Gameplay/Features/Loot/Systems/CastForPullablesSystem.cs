@@ -31,6 +31,9 @@ namespace Code.Gameplay.Features.Loot.Systems
           {
             _hitBuffer[i].isPullable = false;
             _hitBuffer[i].isPulling = true;
+            _hitBuffer[i].isMoving = true;
+            _hitBuffer[i].isMovementAvailable = true;
+            _hitBuffer[i].ReplaceSpeed(2f);
           }
         }
 
